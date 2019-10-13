@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/open.png</file>
+        <file>icons/import_csv.png</file>
     </qresource>
 </RCC>

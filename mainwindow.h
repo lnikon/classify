@@ -17,6 +17,7 @@ enum ActionIndex
     ENUM_SIZE
 };
 
+class CSVTableView;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -26,7 +27,8 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui{nullptr};
+    CSVTableView* csvTableView_{nullptr};
     QVector<QAction *> actions_;
 
     void setupTop();

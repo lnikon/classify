@@ -22,6 +22,7 @@
 #define QDSVTABLEMODEL_H
 
 #include <QAbstractTableModel>
+#include "memorymappedcsvcontainer.h"
 
 //a template-based matrix to store 2D data
 template<class T>
@@ -113,7 +114,7 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     Qt::ItemFlags flags(const QModelIndex &index) const override;
 
-    bool loadFromFile(const QString &fileName, const QChar &delim = 0);
+    MemoryMappedCsvContainer::ReturnCode loadFromFile(const QString &fileName, const QChar &delim = 0);
     bool loadFromData(const QByteArray &data, const QString &format);
 
     bool canFetchMore(const QModelIndex &index) const override;
@@ -128,11 +129,13 @@ public:
               DsvWriteFlag flag = UseDoubleQuotesIfNeeded);
 
 signals:
-    
+    void numberPopulated(int number);
 public slots:
 
 private:
     QDsvMatrix<QString> dsvMatrix;
+    MemoryMappedCsvContainer mmcc_;
+    int rowCnt_{0};
 };
 
 #endif // QDSVTABLEMODEL_H

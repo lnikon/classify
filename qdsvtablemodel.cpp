@@ -30,23 +30,29 @@ QDsvTableModel::QDsvTableModel(QObject *parent) :
 {
 }
 
-int QDsvTableModel::rowCount(const QModelIndex &parent) const
+int QDsvTableModel::rowCount(const QModelIndex &) const
 {
-    Q_UNUSED(parent);
-    return dsvMatrix.rowCount();
+    auto rcnt = mmcc_.rowCnt();
+    return rcnt;
 }
 
-int QDsvTableModel::columnCount(const QModelIndex &parent) const
+int QDsvTableModel::columnCount(const QModelIndex &) const
 {
-    Q_UNUSED(parent);
-    return dsvMatrix.columnCount();
+    auto ccnt = mmcc_.colCnt();
+    return ccnt;
 }
 
 QVariant QDsvTableModel::data(const QModelIndex &index, int role) const
 {
     if (index.isValid())
+    {
         if (role == Qt::DisplayRole || role == Qt::EditRole)
-            return dsvMatrix.at(index.row(), index.column());
+        {
+            std::string str = mmcc_.data(index.row(), index.column()).c_str();
+            return str.c_str();
+        }
+    }
+
     return QVariant();
 }
 
@@ -69,8 +75,8 @@ void checkString(QString &temp, QList<QString> &list, QDsvMatrix<QString> &data,
 {
     if(temp.count("\"")%2 == 0) {
         if (temp.startsWith(QChar('\"')) && temp.endsWith( QChar('\"') ) ) {
-             temp.remove(QRegExp("^\"") );
-             temp.remove(QRegExp("\"$") );
+            temp.remove(QRegExp("^\"") );
+            temp.remove(QRegExp("\"$") );
         }
         temp.replace("\"\"", "\"");
         list.append(temp);
@@ -85,49 +91,51 @@ void checkString(QString &temp, QList<QString> &list, QDsvMatrix<QString> &data,
 }
 
 
-bool QDsvTableModel::loadFromFile(const QString &fileName, const QChar &delim)
+MemoryMappedCsvContainer::ReturnCode QDsvTableModel::loadFromFile(const QString &fileName, const QChar &delim)
 {
-    dsvMatrix.clear();
-    QChar delimiter;
-    QFile file(fileName);
-    if (delim == 0) {
-        QString extension = QFileInfo(file).completeSuffix();
-        if (extension.toLower() == "csv")
-            delimiter = QChar(',');
-        else if (extension.toLower() == "tsv")
-            delimiter = QChar('\t');
-        else
-            return false; //unknown file extension = unknown delimiter
-    } else  if (delim == QChar('"'))
-            return false; //the ONLY invalid delimiter is double quote (")
-    else
-        delimiter = delim;
-    if (!file.isOpen())
-        if (!file.open(QFile::ReadOnly|QFile::Text))
-            return false;
-    QString temp;
-    QChar lastCharacter;
-    QTextStream in(&file);
-    QList<QString> row;
-    while (true) {
-        QChar character;
-        in >> character;
-        if (in.atEnd()) {
-            if (lastCharacter == delimiter) //cases where last character is equal to the delimiter
-                temp = "";
-            checkString(temp, row, dsvMatrix, delimiter, QChar('\n'));
-            break;
-        } else if (character == delimiter || character == QChar('\n'))
-            checkString(temp, row, dsvMatrix, delimiter, character);
-        else {
-            temp.append(character);
-            lastCharacter = character;
-        }
-    }
+    decltype (mmcc_)::ReturnCode ok = mmcc_.open(fileName.toStdString());
+    return ok;
+//    dsvMatrix.clear();
+//    QChar delimiter;
+//    QFile file(fileName);
+//    if (delim == 0)
+//    {
+//        QString extension = QFileInfo(file).completeSuffix();
+//        if (extension.toLower() == "csv")
+//            delimiter = QChar(',');
+//        else if (extension.toLower() == "tsv")
+//            delimiter = QChar('\t');
+//        else
+//            return false; //unknown file extension = unknown delimiter
+//    } else  if (delim == QChar('"'))
+//        return false; //the ONLY invalid delimiter is double quote (")
+//    else
+//        delimiter = delim;
+//    if (!file.isOpen())
+//        if (!file.open(QFile::ReadOnly|QFile::Text))
+//            return false;
+//    QString temp;
+//    QChar lastCharacter;
+//    QTextStream in(&file);
+//    QList<QString> row;
+//    while (true) {
+//        QChar character;
+//        in >> character;
+//        if (in.atEnd()) {
+//            if (lastCharacter == delimiter) //cases where last character is equal to the delimiter
+//                temp = "";
+//            checkString(temp, row, dsvMatrix, delimiter, QChar('\n'));
+//            break;
+//        } else if (character == delimiter || character == QChar('\n'))
+//            checkString(temp, row, dsvMatrix, delimiter, character);
+//        else {
+//            temp.append(character);
+//            lastCharacter = character;
+//        }
+//    }
 
-    file.close();
-    reset(in);
-    return true;
+//    file.close();
+//    reset(in);
 }
 
 bool QDsvTableModel::loadFromData(const QByteArray& /*data*/, const QString& /*format*/)
@@ -137,12 +145,22 @@ bool QDsvTableModel::loadFromData(const QByteArray& /*data*/, const QString& /*f
 
 bool QDsvTableModel::canFetchMore(const QModelIndex& index) const
 {
-
+    return false;
+//    return rowCnt_ < dsvMatrix.rowCount();
 }
 
 void QDsvTableModel::fetchMore(const QModelIndex& parent)
 {
+//    int remainder = dsvMatrix.rowCount() - rowCnt_;
+//    int itemsToFetch = qMin(10, remainder);
 
+//    beginInsertRows(QModelIndex{}, rowCnt_, rowCnt_ + itemsToFetch - 1);
+
+//    rowCnt_ += itemsToFetch;
+
+//    endInsertRows();
+
+//    emit numberPopulated(itemsToFetch);
 }
 
 bool QDsvTableModel::save(const QString &fileName, const QChar &delim,
@@ -159,7 +177,7 @@ bool QDsvTableModel::save(const QString &fileName, const QChar &delim,
         else
             return false; //unknown file extension = unknown delimiter
     } else  if (delim == QChar('"'))
-            return false; //the ONLY invalid delimiter is double quote (")
+        return false; //the ONLY invalid delimiter is double quote (")
     else
         delimiter = delim;
     if (!file.open(QIODevice::WriteOnly))
