@@ -11,16 +11,20 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QDebug>
+#include <QProgressBar>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    csvTableView_{new CSVTableView(parent)}
+    csvTableView_{new CSVTableView(parent)},
+    progressBar_{new QProgressBar(parent)}
 {
     ui->setupUi(this);
     ui->centralWidget->layout()->addWidget(csvTableView_);
 
     setupTop();
+
+    ui->centralWidget->layout()->addWidget(progressBar_);
 }
 
 MainWindow::~MainWindow()
@@ -44,13 +48,14 @@ void MainWindow::openTsv()
     QString fileName = QFileDialog::getOpenFileName(this, tr("Save Delimiter-Separated Value"),
                                                     QDir::currentPath(), "All files (*.*);;"
                                                                          "CSV (*.csv);; TSV (*.tsv)");
-
-    if (!fileName.isEmpty()) {
+    progressBar_->show();
+    if (!fileName.isEmpty())
+    {
         CsvTableModel *model = new CsvTableModel(this);
         QString extension = QFileInfo(QFile(fileName)).completeSuffix();
         if (extension.toLower() == "csv" || extension.toLower() == "tsv") //known file extensions
         {
-            auto code = model->loadFromFile(fileName);
+            auto code = model->loadFromFile(fileName, '\t');
             if(code != MemoryMappedCsvContainer::ReturnCode::SUCCESS)
             {
                 QString errorCodeString = (code == MemoryMappedCsvContainer::ReturnCode::INVALID_DESCRIPTOR ? "INVALID_DESCRIPTOR" : "INVALID_MMAP_ADDRESS");
@@ -61,4 +66,5 @@ void MainWindow::openTsv()
             csvTableView_->setModel(model);
         }
     }
+    progressBar_->hide();
 }

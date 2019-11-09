@@ -1,11 +1,15 @@
 #include "csvtablemodel.h"
 
 #include <iostream>
+#include <thread>
+
+#include <QDebug>
 
 std::size_t CsvTableModel::calledDataCnt_ = 0;
 
 CsvTableModel::CsvTableModel(QObject *parent)
-    : QAbstractTableModel(parent)
+    : QAbstractTableModel(parent),
+      m_pGenericTable{std::make_shared<GenericTable>()}
 {
 
 }
@@ -25,7 +29,8 @@ Qt::ItemFlags CsvTableModel::flags(const QModelIndex &index) const
     return QAbstractItemModel::flags(index);
 }
 
-QVariant CsvTableModel::data(const QModelIndex &index, int role) const
+QVariant CsvTableModel::data(const QModelIndex &index,
+                             int role) const
 {
     if(!index.isValid())
     {
@@ -33,7 +38,7 @@ QVariant CsvTableModel::data(const QModelIndex &index, int role) const
     }
 
     const int row = index.row();
-    if(row <= 0)
+    if(row < 0)
     {
         return QVariant{};
     }
@@ -45,19 +50,31 @@ QVariant CsvTableModel::data(const QModelIndex &index, int role) const
 
     if(role == Qt::DisplayRole)
     {
-        const std::string& result = mmcc_.data(static_cast<std::size_t>(index.row()), static_cast<std::size_t>(index.column()));
-        return result.c_str();
+        const int row = index.row();
+        const int column = index.column();
+
+        if(row < dataCache_.size()
+           && column < dataCache_[row].size())
+        {
+            return dataCache_[row][column].c_str();
+        }
     }
 
     return QVariant{};
 }
 
-bool CsvTableModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool CsvTableModel::setData(const QModelIndex &index,
+                            const QVariant &value, int role)
 {
+    Q_UNUSED(index)
+    Q_UNUSED(value)
+    Q_UNUSED(role)
     return false;
 }
 
-QVariant CsvTableModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant CsvTableModel::headerData(int section,
+                                   Qt::Orientation orientation,
+                                   int role) const
 {
     if(role != Qt::DisplayRole)
     {
@@ -75,27 +92,74 @@ QVariant CsvTableModel::headerData(int section, Qt::Orientation orientation, int
     return QVariant{};
 }
 
-bool CsvTableModel::insertRows(int row, int count, const QModelIndex &parent)
+bool CsvTableModel::insertRows(int row, int count,
+                               const QModelIndex &parent)
 {
+    Q_UNUSED(row)
+    Q_UNUSED(count)
+    Q_UNUSED(parent)
     return false;
 }
 
-bool CsvTableModel::removeRows(int row, int count, const QModelIndex &parent)
+bool CsvTableModel::removeRows(int row, int count,
+                               const QModelIndex &parent)
 {
+    Q_UNUSED(row)
+    Q_UNUSED(count)
+    Q_UNUSED(parent)
     return false;
 }
 
-MemoryMappedCsvContainer::ReturnCode CsvTableModel::loadFromFile(const QString &fileName, const QChar &delim)
+MemoryMappedCsvContainer::ReturnCode
+CsvTableModel::loadFromFile(const QString &fileName,
+                            const QChar &delim)
 {
-    decltype (mmcc_)::ReturnCode ok = mmcc_.open(fileName.toStdString());
+    m_pGenericTable->clear();
 
-    // Set rows and columns count
+    MemoryMappedCsvContainer::ReturnCode ok
+            = mmcc_.open(fileName.toStdString(), delim.toLatin1());
+
+    /*
+     *  Set rows and columns count
+     */
     rowCnt_ = mmcc_.rowCnt();
     colCnt_ = mmcc_.colCnt();
 
-    // Cache headers for further use
+    /*
+     * Cache headers for further use
+     */
     const QString& header = mmcc_.row(0).c_str();
-    headerNamesCached_ = header.split("\t");
+    headerNamesCached_ = header.split(delim);
+
+    loadDataIntoCache();
 
     return ok;
+}
+
+void CsvTableModel::loadDataIntoCacheWorker(int rowCnt,
+                                            int colCnt,
+                                            std::vector<std::vector<std::string>>& dataCache,
+                                            MemoryMappedCsvContainer& mmcc)
+{
+    mmcc.data(dataCache);
+}
+
+void CsvTableModel::loadDataIntoCache()
+{
+    DataLoaderThread dataLoader(dataCache_);
+    dataLoader.rowCnt = rowCnt_;
+    dataLoader.colCnt = colCnt_;
+    dataLoader.mmcc = &mmcc_;
+
+    connect(&dataLoader, &DataLoaderThread::finished, this, [&dataLoader, this]()
+    {
+        this->mmcc_.reset();
+    });
+
+    dataLoader.run();
+}
+
+void DataLoaderThread::run()
+{
+    mmcc->data(dataCache);
 }

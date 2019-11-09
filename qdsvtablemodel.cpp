@@ -48,7 +48,7 @@ QVariant QDsvTableModel::data(const QModelIndex &index, int role) const
     {
         if (role == Qt::DisplayRole || role == Qt::EditRole)
         {
-            std::string str = mmcc_.data(index.row(), index.column()).c_str();
+            std::string str = "";
             return str.c_str();
         }
     }
@@ -93,7 +93,7 @@ void checkString(QString &temp, QList<QString> &list, QDsvMatrix<QString> &data,
 
 MemoryMappedCsvContainer::ReturnCode QDsvTableModel::loadFromFile(const QString &fileName, const QChar &delim)
 {
-    decltype (mmcc_)::ReturnCode ok = mmcc_.open(fileName.toStdString());
+    decltype (mmcc_)::ReturnCode ok = mmcc_.open(fileName.toStdString(), delim.toLatin1());
     return ok;
 //    dsvMatrix.clear();
 //    QChar delimiter;

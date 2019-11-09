@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QAction>
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +17,8 @@ enum ActionIndex
 };
 
 class CSVTableView;
+class QAction;
+class QProgressBar;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -27,9 +28,10 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui{nullptr};
-    CSVTableView* csvTableView_{nullptr};
-    QVector<QAction *> actions_;
+    Ui::MainWindow      *ui{nullptr};
+    CSVTableView        *csvTableView_{nullptr};
+    QProgressBar        *progressBar_{nullptr};
+    QVector<QAction *>  actions_;
 
     void setupTop();
 

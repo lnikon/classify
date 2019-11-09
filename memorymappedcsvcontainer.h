@@ -2,6 +2,7 @@
 #define MEMORYMAPPEDCSVCONTAINER_H
 
 #include <string>
+#include <vector>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,14 +20,15 @@ struct MemoryMappedCsvContainer
     {
         INVALID_DESCRIPTOR,
         INVALID_MMAP_ADDRESS,
+        LSEEK_ERROR,
         SUCCESS
     };
 
-    explicit MemoryMappedCsvContainer(const std::string& filename);
-    MemoryMappedCsvContainer();
+    explicit MemoryMappedCsvContainer(const std::string& filename, char delim);
+    MemoryMappedCsvContainer() = default;
     ~MemoryMappedCsvContainer();
 
-    ReturnCode  open(const std::string& filename);
+    ReturnCode  open(const std::string& filename, char delim);
     bool        close();
 
     std::size_t rowCnt() const;
@@ -34,13 +36,16 @@ struct MemoryMappedCsvContainer
 
     std::string row(std::size_t row) const;
 
-    std::string data(std::size_t row, std::size_t col) const;
+    void        data(std::vector<std::vector<std::string>>& dataCache) const;
+    void        reset();
 
 private:
     std::string filename_{};
     int         fd_{-1};
-    std::size_t size_{0};
+    long        size_{0};
     char*       buffer_{nullptr};
+    char*       bufferOriginal_{nullptr};
+    char        delim_{','};
 
     std::size_t rowCnt_{0};
     std::size_t colCnt_{0};

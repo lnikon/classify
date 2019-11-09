@@ -10,8 +10,6 @@ class Row
 public:
     Row();
 
-
-
 private:
     std::shared_ptr<Category> category_{nullptr};
 
