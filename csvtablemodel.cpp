@@ -151,7 +151,7 @@ void CsvTableModel::loadDataIntoCache()
     dataLoader.colCnt = colCnt_;
     dataLoader.mmcc = &mmcc_;
 
-    connect(&dataLoader, &DataLoaderThread::finished, this, [&dataLoader, this]()
+    connect(&dataLoader, &DataLoaderThread::finished, this, [this]()
     {
         this->mmcc_.reset();
     });

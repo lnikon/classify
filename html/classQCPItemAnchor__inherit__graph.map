@@ -1,0 +1,4 @@
+<map id="QCPItemAnchor" name="QCPItemAnchor">
+<area shape="rect" id="node1" title="An anchor of an item to which positions can be attached to." alt="" coords="5,5,160,273"/>
+<area shape="rect" id="node2" href="$classQCPItemPosition.html" title="Manages the position of an item." alt="" coords="5,321,160,677"/>
+</map>

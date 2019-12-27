@@ -1,0 +1,121 @@
+\hypertarget{csvtablemodel_8h}{}\doxysection{csvtablemodel.\+h File Reference}
+\label{csvtablemodel_8h}\index{csvtablemodel.h@{csvtablemodel.h}}
+{\ttfamily \#include \char`\"{}memorymappedcsvcontainer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Abstract\+Table\+Model$>$}\newline
+{\ttfamily \#include $<$Q\+String\+List$>$}\newline
+{\ttfamily \#include $<$Q\+Variant$>$}\newline
+{\ttfamily \#include $<$Q\+Vector$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$Q\+Thread$>$}\newline
+Include dependency graph for csvtablemodel.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{csvtablemodel_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{csvtablemodel_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCellValue}{Cell\+Value}}
+\item 
+struct \mbox{\hyperlink{structGenericRow}{Generic\+Row}}
+\item 
+struct \mbox{\hyperlink{structDataLoaderThread}{Data\+Loader\+Thread}}
+\item 
+class \mbox{\hyperlink{classCsvTableModel}{Csv\+Table\+Model}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{csvtablemodel_8h_ab38e87f1273b5b5258594b907371c6aa}{Combobox\+Values}} = Q\+Vector$<$ Q\+String $>$
+\item 
+using \mbox{\hyperlink{csvtablemodel_8h_ac723fb75d7ba0c36550c196ec33eea88}{Cell\+Value\+Variant}} = Q\+Variant
+\item 
+using \mbox{\hyperlink{csvtablemodel_8h_a1b0d4eae4e4ac196bf6eccdc98ba4e35}{Generic\+Table}} = Q\+Vector$<$ \mbox{\hyperlink{structGenericRow}{Generic\+Row}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97}{Cell\+Value\+Type}} \{ \mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a0679273e201afd0bf57af3961f8a23b8}{Cell\+Value\+Type\+::\+S\+I\+N\+G\+LE}} = 1, 
+\mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a42c966312647c6cb6351836c4fbf8689}{Cell\+Value\+Type\+::\+C\+O\+M\+B\+O\+B\+OX}} = 2, 
+\mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ab5a732549319af0ddb6913df89efc0df}{Cell\+Value\+Type\+::\+U\+N\+K\+O\+WN}}, 
+\mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ae3dd6107a104fbd55271300747a31048}{Cell\+Value\+Type\+::\+C\+E\+L\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+ND}}
+ \}
+\item 
+enum \mbox{\hyperlink{csvtablemodel_8h_a11eb10c4b8e1bb16dac35bb0689306e8}{Cell\+Value\+Type\+\_\+\+Single\+Tag}} 
+\item 
+enum \mbox{\hyperlink{csvtablemodel_8h_a7e7749863b054dfc54734cfbf457e491}{Cell\+Value\+Type\+\_\+\+Combobox\+Tag}} 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{csvtablemodel_8h_ac723fb75d7ba0c36550c196ec33eea88}\label{csvtablemodel_8h_ac723fb75d7ba0c36550c196ec33eea88}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!CellValueVariant@{CellValueVariant}}
+\index{CellValueVariant@{CellValueVariant}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{CellValueVariant}{CellValueVariant}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{csvtablemodel_8h_ac723fb75d7ba0c36550c196ec33eea88}{Cell\+Value\+Variant}} =  Q\+Variant}
+
+\mbox{\Hypertarget{csvtablemodel_8h_ab38e87f1273b5b5258594b907371c6aa}\label{csvtablemodel_8h_ab38e87f1273b5b5258594b907371c6aa}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!ComboboxValues@{ComboboxValues}}
+\index{ComboboxValues@{ComboboxValues}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{ComboboxValues}{ComboboxValues}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{csvtablemodel_8h_ab38e87f1273b5b5258594b907371c6aa}{Combobox\+Values}} =  Q\+Vector$<$Q\+String$>$}
+
+\mbox{\Hypertarget{csvtablemodel_8h_a1b0d4eae4e4ac196bf6eccdc98ba4e35}\label{csvtablemodel_8h_a1b0d4eae4e4ac196bf6eccdc98ba4e35}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!GenericTable@{GenericTable}}
+\index{GenericTable@{GenericTable}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{GenericTable}{GenericTable}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{csvtablemodel_8h_a1b0d4eae4e4ac196bf6eccdc98ba4e35}{Generic\+Table}} =  Q\+Vector$<$\mbox{\hyperlink{structGenericRow}{Generic\+Row}}$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97}\label{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!CellValueType@{CellValueType}}
+\index{CellValueType@{CellValueType}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{CellValueType}{CellValueType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97}{Cell\+Value\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SINGLE@{SINGLE}!csvtablemodel.h@{csvtablemodel.h}}\index{csvtablemodel.h@{csvtablemodel.h}!SINGLE@{SINGLE}}}\mbox{\Hypertarget{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a0679273e201afd0bf57af3961f8a23b8}\label{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a0679273e201afd0bf57af3961f8a23b8}} 
+S\+I\+N\+G\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMBOBOX@{COMBOBOX}!csvtablemodel.h@{csvtablemodel.h}}\index{csvtablemodel.h@{csvtablemodel.h}!COMBOBOX@{COMBOBOX}}}\mbox{\Hypertarget{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a42c966312647c6cb6351836c4fbf8689}\label{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97a42c966312647c6cb6351836c4fbf8689}} 
+C\+O\+M\+B\+O\+B\+OX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKOWN@{UNKOWN}!csvtablemodel.h@{csvtablemodel.h}}\index{csvtablemodel.h@{csvtablemodel.h}!UNKOWN@{UNKOWN}}}\mbox{\Hypertarget{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ab5a732549319af0ddb6913df89efc0df}\label{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ab5a732549319af0ddb6913df89efc0df}} 
+U\+N\+K\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CELL\_VALUE\_TYPE\_END@{CELL\_VALUE\_TYPE\_END}!csvtablemodel.h@{csvtablemodel.h}}\index{csvtablemodel.h@{csvtablemodel.h}!CELL\_VALUE\_TYPE\_END@{CELL\_VALUE\_TYPE\_END}}}\mbox{\Hypertarget{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ae3dd6107a104fbd55271300747a31048}\label{csvtablemodel_8h_a5b2b8fd600d6011cd9820c6769348b97ae3dd6107a104fbd55271300747a31048}} 
+C\+E\+L\+L\+\_\+\+V\+A\+L\+U\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+ND&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{csvtablemodel_8h_a7e7749863b054dfc54734cfbf457e491}\label{csvtablemodel_8h_a7e7749863b054dfc54734cfbf457e491}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!CellValueType\_ComboboxTag@{CellValueType\_ComboboxTag}}
+\index{CellValueType\_ComboboxTag@{CellValueType\_ComboboxTag}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{CellValueType\_ComboboxTag}{CellValueType\_ComboboxTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{csvtablemodel_8h_a7e7749863b054dfc54734cfbf457e491}{Cell\+Value\+Type\+\_\+\+Combobox\+Tag}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\mbox{\Hypertarget{csvtablemodel_8h_a11eb10c4b8e1bb16dac35bb0689306e8}\label{csvtablemodel_8h_a11eb10c4b8e1bb16dac35bb0689306e8}} 
+\index{csvtablemodel.h@{csvtablemodel.h}!CellValueType\_SingleTag@{CellValueType\_SingleTag}}
+\index{CellValueType\_SingleTag@{CellValueType\_SingleTag}!csvtablemodel.h@{csvtablemodel.h}}
+\doxysubsubsection{\texorpdfstring{CellValueType\_SingleTag}{CellValueType\_SingleTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{csvtablemodel_8h_a11eb10c4b8e1bb16dac35bb0689306e8}{Cell\+Value\+Type\+\_\+\+Single\+Tag}}\hspace{0.3cm}{\ttfamily [strong]}}
+

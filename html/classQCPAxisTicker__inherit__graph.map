@@ -1,0 +1,9 @@
+<map id="QCPAxisTicker" name="QCPAxisTicker">
+<area shape="rect" id="node1" title="The base class tick generator used by QCPAxis to create tick positions and tick labels." alt="" coords="487,5,650,376"/>
+<area shape="rect" id="node2" href="$classQCPAxisTickerDateTime.html" title="Specialized axis ticker for calendar dates and times as axis ticks." alt="" coords="5,461,193,758"/>
+<area shape="rect" id="node3" href="$classQCPAxisTickerFixed.html" title="Specialized axis ticker with a fixed tick step." alt="" coords="218,527,381,692"/>
+<area shape="rect" id="node4" href="$classQCPAxisTickerLog.html" title="Specialized axis ticker suited for logarithmic axes." alt="" coords="405,505,557,714"/>
+<area shape="rect" id="node5" href="$classQCPAxisTickerPi.html" title="Specialized axis ticker to display ticks in units of an arbitrary constant, for example pi." alt="" coords="581,424,733,795"/>
+<area shape="rect" id="node6" href="$classQCPAxisTickerText.html" title="Specialized axis ticker which allows arbitrary labels at specified coordinates." alt="" coords="757,468,913,751"/>
+<area shape="rect" id="node7" href="$classQCPAxisTickerTime.html" title="Specialized axis ticker for time spans in units of milliseconds to days." alt="" coords="938,483,1098,736"/>
+</map>

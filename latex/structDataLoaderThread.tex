@@ -1,0 +1,95 @@
+\hypertarget{structDataLoaderThread}{}\doxysection{Data\+Loader\+Thread Struct Reference}
+\label{structDataLoaderThread}\index{DataLoaderThread@{DataLoaderThread}}
+
+
+{\ttfamily \#include $<$csvtablemodel.\+h$>$}
+
+
+
+Inheritance diagram for Data\+Loader\+Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{structDataLoaderThread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Data\+Loader\+Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{structDataLoaderThread__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structDataLoaderThread_a48d9dbaa982a51240892b3976efd8a16}{Data\+Loader\+Thread}} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&\mbox{\hyperlink{structDataLoaderThread_aee22012d2f16f76c9c9fc2dd638244cf}{data\+Cache}})
+\item 
+void \mbox{\hyperlink{structDataLoaderThread_a1c2ccbc34531133d53f4383d8e9670ae}{run}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structDataLoaderThread_a30698cb4a38d64cddcb9df9d9f108645}{row\+Cnt}}
+\item 
+int \mbox{\hyperlink{structDataLoaderThread_ac5110f5972006efc054b5cd42873ffc4}{col\+Cnt}}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \& \mbox{\hyperlink{structDataLoaderThread_aee22012d2f16f76c9c9fc2dd638244cf}{data\+Cache}}
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer}{Memory\+Mapped\+Csv\+Container}} $\ast$ \mbox{\hyperlink{structDataLoaderThread_ad92294ed15e03b076d3c35d7ea7c0a6d}{mmcc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structDataLoaderThread_a48d9dbaa982a51240892b3976efd8a16}\label{structDataLoaderThread_a48d9dbaa982a51240892b3976efd8a16}} 
+\index{DataLoaderThread@{DataLoaderThread}!DataLoaderThread@{DataLoaderThread}}
+\index{DataLoaderThread@{DataLoaderThread}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{DataLoaderThread()}{DataLoaderThread()}}
+{\footnotesize\ttfamily Data\+Loader\+Thread\+::\+Data\+Loader\+Thread (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&}]{data\+Cache }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structDataLoaderThread_a1c2ccbc34531133d53f4383d8e9670ae}\label{structDataLoaderThread_a1c2ccbc34531133d53f4383d8e9670ae}} 
+\index{DataLoaderThread@{DataLoaderThread}!run@{run}}
+\index{run@{run}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Data\+Loader\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structDataLoaderThread_ac5110f5972006efc054b5cd42873ffc4}\label{structDataLoaderThread_ac5110f5972006efc054b5cd42873ffc4}} 
+\index{DataLoaderThread@{DataLoaderThread}!colCnt@{colCnt}}
+\index{colCnt@{colCnt}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{colCnt}{colCnt}}
+{\footnotesize\ttfamily int Data\+Loader\+Thread\+::col\+Cnt}
+
+\mbox{\Hypertarget{structDataLoaderThread_aee22012d2f16f76c9c9fc2dd638244cf}\label{structDataLoaderThread_aee22012d2f16f76c9c9fc2dd638244cf}} 
+\index{DataLoaderThread@{DataLoaderThread}!dataCache@{dataCache}}
+\index{dataCache@{dataCache}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{dataCache}{dataCache}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$std\+::string$>$ $>$\& Data\+Loader\+Thread\+::data\+Cache}
+
+\mbox{\Hypertarget{structDataLoaderThread_ad92294ed15e03b076d3c35d7ea7c0a6d}\label{structDataLoaderThread_ad92294ed15e03b076d3c35d7ea7c0a6d}} 
+\index{DataLoaderThread@{DataLoaderThread}!mmcc@{mmcc}}
+\index{mmcc@{mmcc}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{mmcc}{mmcc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMemoryMappedCsvContainer}{Memory\+Mapped\+Csv\+Container}}$\ast$ Data\+Loader\+Thread\+::mmcc}
+
+\mbox{\Hypertarget{structDataLoaderThread_a30698cb4a38d64cddcb9df9d9f108645}\label{structDataLoaderThread_a30698cb4a38d64cddcb9df9d9f108645}} 
+\index{DataLoaderThread@{DataLoaderThread}!rowCnt@{rowCnt}}
+\index{rowCnt@{rowCnt}!DataLoaderThread@{DataLoaderThread}}
+\doxysubsubsection{\texorpdfstring{rowCnt}{rowCnt}}
+{\footnotesize\ttfamily int Data\+Loader\+Thread\+::row\+Cnt}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{csvtablemodel_8h}{csvtablemodel.\+h}}\item 
+\mbox{\hyperlink{csvtablemodel_8cpp}{csvtablemodel.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,166 @@
+\hypertarget{classQDsvTableModel}{}\doxysection{Q\+Dsv\+Table\+Model Class Reference}
+\label{classQDsvTableModel}\index{QDsvTableModel@{QDsvTableModel}}
+
+
+{\ttfamily \#include $<$qdsvtablemodel.\+h$>$}
+
+
+
+Inheritance diagram for Q\+Dsv\+Table\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classQDsvTableModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Q\+Dsv\+Table\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classQDsvTableModel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}{Dsv\+Write\+Flag}} \{ \mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a42a55cc510883a2096044d6aa9b609fb}{Use\+Double\+Quotes\+If\+Needed}}, 
+\mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a35ba2628fbd75dd10052bd9b07080ce4}{Always\+Use\+Double\+Quotes}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQDsvTableModel_a8f486f4264ca359dfdfcfbc86d437702}{number\+Populated}} (int number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQDsvTableModel_a6f2dd8bafb328efa20aaa27e870d0ab3}{Q\+Dsv\+Table\+Model}} (Q\+Object $\ast$parent=Q\+\_\+\+N\+U\+L\+L\+P\+TR)
+\item 
+int \mbox{\hyperlink{classQDsvTableModel_a0d485b8ad8727b4e76fbbdf5cf1334f4}{row\+Count}} (const Q\+Model\+Index \&parent) const override
+\item 
+int \mbox{\hyperlink{classQDsvTableModel_acf56ac1d05f23c7754c0bcf7925f2c09}{column\+Count}} (const Q\+Model\+Index \&parent) const override
+\item 
+Q\+Variant \mbox{\hyperlink{classQDsvTableModel_a223d41c4b1f25df08a4f1ab42ad9161a}{data}} (const Q\+Model\+Index \&index, int role) const override
+\item 
+bool \mbox{\hyperlink{classQDsvTableModel_a1d17d2bf737610375fa308acd1769132}{set\+Data}} (const Q\+Model\+Index \&index, const Q\+Variant \&value, int role) override
+\item 
+Qt\+::\+Item\+Flags \mbox{\hyperlink{classQDsvTableModel_a3632efb1fa237c7bf9b919c4761c926f}{flags}} (const Q\+Model\+Index \&index) const override
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Memory\+Mapped\+Csv\+Container\+::\+Return\+Code}} \mbox{\hyperlink{classQDsvTableModel_a468f03865f2af953bf9fe81ec4431646}{load\+From\+File}} (const Q\+String \&file\+Name, const Q\+Char \&delim=0)
+\item 
+bool \mbox{\hyperlink{classQDsvTableModel_a3f33fed95f0a3023a2f263b1ef2d5d40}{load\+From\+Data}} (const Q\+Byte\+Array \&\mbox{\hyperlink{classQDsvTableModel_a223d41c4b1f25df08a4f1ab42ad9161a}{data}}, const Q\+String \&format)
+\item 
+bool \mbox{\hyperlink{classQDsvTableModel_a8a7c33907b4ca8ec234ade9ac20723eb}{can\+Fetch\+More}} (const Q\+Model\+Index \&index) const override
+\item 
+void \mbox{\hyperlink{classQDsvTableModel_a8b292983c1d8f55805c38355abbf7d16}{fetch\+More}} (const Q\+Model\+Index \&parent) override
+\item 
+bool \mbox{\hyperlink{classQDsvTableModel_aa77812cff49d554f17177fc61fdc9837}{save}} (const Q\+String \&file\+Name, const Q\+Char \&delim=0, \mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}{Dsv\+Write\+Flag}} flag=\mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a42a55cc510883a2096044d6aa9b609fb}{Use\+Double\+Quotes\+If\+Needed}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}\label{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}} 
+\index{QDsvTableModel@{QDsvTableModel}!DsvWriteFlag@{DsvWriteFlag}}
+\index{DsvWriteFlag@{DsvWriteFlag}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{DsvWriteFlag}{DsvWriteFlag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}{Q\+Dsv\+Table\+Model\+::\+Dsv\+Write\+Flag}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UseDoubleQuotesIfNeeded@{UseDoubleQuotesIfNeeded}!QDsvTableModel@{QDsvTableModel}}\index{QDsvTableModel@{QDsvTableModel}!UseDoubleQuotesIfNeeded@{UseDoubleQuotesIfNeeded}}}\mbox{\Hypertarget{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a42a55cc510883a2096044d6aa9b609fb}\label{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a42a55cc510883a2096044d6aa9b609fb}} 
+Use\+Double\+Quotes\+If\+Needed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlwaysUseDoubleQuotes@{AlwaysUseDoubleQuotes}!QDsvTableModel@{QDsvTableModel}}\index{QDsvTableModel@{QDsvTableModel}!AlwaysUseDoubleQuotes@{AlwaysUseDoubleQuotes}}}\mbox{\Hypertarget{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a35ba2628fbd75dd10052bd9b07080ce4}\label{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a35ba2628fbd75dd10052bd9b07080ce4}} 
+Always\+Use\+Double\+Quotes&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQDsvTableModel_a6f2dd8bafb328efa20aaa27e870d0ab3}\label{classQDsvTableModel_a6f2dd8bafb328efa20aaa27e870d0ab3}} 
+\index{QDsvTableModel@{QDsvTableModel}!QDsvTableModel@{QDsvTableModel}}
+\index{QDsvTableModel@{QDsvTableModel}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{QDsvTableModel()}{QDsvTableModel()}}
+{\footnotesize\ttfamily Q\+Dsv\+Table\+Model\+::\+Q\+Dsv\+Table\+Model (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily Q\+\_\+NULLPTR} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQDsvTableModel_a8a7c33907b4ca8ec234ade9ac20723eb}\label{classQDsvTableModel_a8a7c33907b4ca8ec234ade9ac20723eb}} 
+\index{QDsvTableModel@{QDsvTableModel}!canFetchMore@{canFetchMore}}
+\index{canFetchMore@{canFetchMore}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{canFetchMore()}{canFetchMore()}}
+{\footnotesize\ttfamily bool Q\+Dsv\+Table\+Model\+::can\+Fetch\+More (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_acf56ac1d05f23c7754c0bcf7925f2c09}\label{classQDsvTableModel_acf56ac1d05f23c7754c0bcf7925f2c09}} 
+\index{QDsvTableModel@{QDsvTableModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{columnCount()}{columnCount()}}
+{\footnotesize\ttfamily int Q\+Dsv\+Table\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_a223d41c4b1f25df08a4f1ab42ad9161a}\label{classQDsvTableModel_a223d41c4b1f25df08a4f1ab42ad9161a}} 
+\index{QDsvTableModel@{QDsvTableModel}!data@{data}}
+\index{data@{data}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Q\+Dsv\+Table\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_a8b292983c1d8f55805c38355abbf7d16}\label{classQDsvTableModel_a8b292983c1d8f55805c38355abbf7d16}} 
+\index{QDsvTableModel@{QDsvTableModel}!fetchMore@{fetchMore}}
+\index{fetchMore@{fetchMore}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{fetchMore()}{fetchMore()}}
+{\footnotesize\ttfamily void Q\+Dsv\+Table\+Model\+::fetch\+More (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_a3632efb1fa237c7bf9b919c4761c926f}\label{classQDsvTableModel_a3632efb1fa237c7bf9b919c4761c926f}} 
+\index{QDsvTableModel@{QDsvTableModel}!flags@{flags}}
+\index{flags@{flags}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags Q\+Dsv\+Table\+Model\+::flags (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_a3f33fed95f0a3023a2f263b1ef2d5d40}\label{classQDsvTableModel_a3f33fed95f0a3023a2f263b1ef2d5d40}} 
+\index{QDsvTableModel@{QDsvTableModel}!loadFromData@{loadFromData}}
+\index{loadFromData@{loadFromData}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{loadFromData()}{loadFromData()}}
+{\footnotesize\ttfamily bool Q\+Dsv\+Table\+Model\+::load\+From\+Data (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data,  }\item[{const Q\+String \&}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classQDsvTableModel_a468f03865f2af953bf9fe81ec4431646}\label{classQDsvTableModel_a468f03865f2af953bf9fe81ec4431646}} 
+\index{QDsvTableModel@{QDsvTableModel}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Memory\+Mapped\+Csv\+Container\+::\+Return\+Code}} Q\+Dsv\+Table\+Model\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+Char \&}]{delim = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classQDsvTableModel_a8f486f4264ca359dfdfcfbc86d437702}\label{classQDsvTableModel_a8f486f4264ca359dfdfcfbc86d437702}} 
+\index{QDsvTableModel@{QDsvTableModel}!numberPopulated@{numberPopulated}}
+\index{numberPopulated@{numberPopulated}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{numberPopulated}{numberPopulated}}
+{\footnotesize\ttfamily void Q\+Dsv\+Table\+Model\+::number\+Populated (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_a0d485b8ad8727b4e76fbbdf5cf1334f4}\label{classQDsvTableModel_a0d485b8ad8727b4e76fbbdf5cf1334f4}} 
+\index{QDsvTableModel@{QDsvTableModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Q\+Dsv\+Table\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+\mbox{\Hypertarget{classQDsvTableModel_aa77812cff49d554f17177fc61fdc9837}\label{classQDsvTableModel_aa77812cff49d554f17177fc61fdc9837}} 
+\index{QDsvTableModel@{QDsvTableModel}!save@{save}}
+\index{save@{save}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Q\+Dsv\+Table\+Model\+::save (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+Char \&}]{delim = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978}{Q\+Dsv\+Table\+Model\+::\+Dsv\+Write\+Flag}}}]{flag = {\ttfamily \mbox{\hyperlink{classQDsvTableModel_abece57f1c90ef1d27ceccbc1b2d09978a42a55cc510883a2096044d6aa9b609fb}{Use\+Double\+Quotes\+If\+Needed}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classQDsvTableModel_a1d17d2bf737610375fa308acd1769132}\label{classQDsvTableModel_a1d17d2bf737610375fa308acd1769132}} 
+\index{QDsvTableModel@{QDsvTableModel}!setData@{setData}}
+\index{setData@{setData}!QDsvTableModel@{QDsvTableModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily bool Q\+Dsv\+Table\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{qdsvtablemodel_8h}{qdsvtablemodel.\+h}}\item 
+\mbox{\hyperlink{qdsvtablemodel_8cpp}{qdsvtablemodel.\+cpp}}\end{DoxyCompactItemize}

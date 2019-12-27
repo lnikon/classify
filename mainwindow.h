@@ -7,7 +7,7 @@ namespace Ui {
 class MainWindow;
 }
 
-enum ActionIndex
+enum class ActionIndex
 {
     OPEN_TSV = 0,
     SAVE,

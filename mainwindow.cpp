@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setupTop();
 
-    ui->centralWidget->layout()->addWidget(progressBar_);
+//    ui->centralWidget->layout()->addWidget(progressBar_);
 }
 
 MainWindow::~MainWindow()
@@ -40,7 +40,7 @@ void MainWindow::setupTop()
     actions_.push_back(openAction);
     file->addAction(openAction);
     ui->mainToolBar->addAction(openAction);
-    connect(actions_[OPEN_TSV], &QAction::triggered, this, &MainWindow::openTsv);
+    connect(actions_[static_cast<int>(ActionIndex::OPEN_TSV)], &QAction::triggered, this, &MainWindow::openTsv);
 }
 
 void MainWindow::openTsv()

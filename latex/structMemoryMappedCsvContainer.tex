@@ -1,0 +1,147 @@
+\hypertarget{structMemoryMappedCsvContainer}{}\doxysection{Memory\+Mapped\+Csv\+Container Struct Reference}
+\label{structMemoryMappedCsvContainer}\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+
+
+{\ttfamily \#include $<$memorymappedcsvcontainer.\+h$>$}
+
+
+
+Collaboration diagram for Memory\+Mapped\+Csv\+Container\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{structMemoryMappedCsvContainer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Return\+Code}} \{ \mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeabe54b4659ef3c6386f5780740ba09276}{Return\+Code\+::\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+OR}}, 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeadeeb0284a41a98b42efbdfc0c354997d}{Return\+Code\+::\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+M\+A\+P\+\_\+\+A\+D\+D\+R\+E\+SS}}, 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfea2a05a6f1ec9e1bb54c94a6ca568bf61d}{Return\+Code\+::\+L\+S\+E\+E\+K\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfead0749aaba8b833466dfcbb0428e4f89c}{Return\+Code\+::\+S\+U\+C\+C\+E\+SS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_a7989f79868b0b2d27e810214fe90c330}{Memory\+Mapped\+Csv\+Container}} (const std\+::string \&filename, char delim)
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac4de3c479570adbc5a8a6a7657d53c86}{Memory\+Mapped\+Csv\+Container}} ()=default
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_a8b46304c264d834e65e76e223817d464}{$\sim$\+Memory\+Mapped\+Csv\+Container}} ()
+\item 
+\mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Return\+Code}} \mbox{\hyperlink{structMemoryMappedCsvContainer_a5defae284aca5ee7632dbc76629807e0}{open}} (const std\+::string \&filename, char delim)
+\item 
+bool \mbox{\hyperlink{structMemoryMappedCsvContainer_a9e26cb5acfeaf3ed1887a5908a9464c3}{close}} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{structMemoryMappedCsvContainer_a9afa0643b4f2474c0b4b44dd2edfc83f}{row\+Cnt}} () const
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{structMemoryMappedCsvContainer_a24e63052aebe0f296d0ae3940d597041}{col\+Cnt}} () const
+\item 
+std\+::string \mbox{\hyperlink{structMemoryMappedCsvContainer_a3a5aeb5e9a4624bcc5c2402355d6a8f1}{row}} (std\+::size\+\_\+t row) const
+\item 
+void \mbox{\hyperlink{structMemoryMappedCsvContainer_a6b99b2889fc5b6f7201b5d3a25314b42}{data}} (std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&data\+Cache) const
+\item 
+void \mbox{\hyperlink{structMemoryMappedCsvContainer_a1411adcf0bb73eb787603667f9098e7d}{reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}\label{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!ReturnCode@{ReturnCode}}
+\index{ReturnCode@{ReturnCode}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{ReturnCode}{ReturnCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Memory\+Mapped\+Csv\+Container\+::\+Return\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_DESCRIPTOR@{INVALID\_DESCRIPTOR}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!INVALID\_DESCRIPTOR@{INVALID\_DESCRIPTOR}}}\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeabe54b4659ef3c6386f5780740ba09276}\label{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeabe54b4659ef3c6386f5780740ba09276}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+S\+C\+R\+I\+P\+T\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_MMAP\_ADDRESS@{INVALID\_MMAP\_ADDRESS}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!INVALID\_MMAP\_ADDRESS@{INVALID\_MMAP\_ADDRESS}}}\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeadeeb0284a41a98b42efbdfc0c354997d}\label{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfeadeeb0284a41a98b42efbdfc0c354997d}} 
+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+M\+A\+P\+\_\+\+A\+D\+D\+R\+E\+SS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LSEEK\_ERROR@{LSEEK\_ERROR}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!LSEEK\_ERROR@{LSEEK\_ERROR}}}\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfea2a05a6f1ec9e1bb54c94a6ca568bf61d}\label{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfea2a05a6f1ec9e1bb54c94a6ca568bf61d}} 
+L\+S\+E\+E\+K\+\_\+\+E\+R\+R\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SUCCESS@{SUCCESS}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!SUCCESS@{SUCCESS}}}\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfead0749aaba8b833466dfcbb0428e4f89c}\label{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfead0749aaba8b833466dfcbb0428e4f89c}} 
+S\+U\+C\+C\+E\+SS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a7989f79868b0b2d27e810214fe90c330}\label{structMemoryMappedCsvContainer_a7989f79868b0b2d27e810214fe90c330}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{MemoryMappedCsvContainer()}{MemoryMappedCsvContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Memory\+Mapped\+Csv\+Container\+::\+Memory\+Mapped\+Csv\+Container (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{char}]{delim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_ac4de3c479570adbc5a8a6a7657d53c86}\label{structMemoryMappedCsvContainer_ac4de3c479570adbc5a8a6a7657d53c86}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{MemoryMappedCsvContainer()}{MemoryMappedCsvContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Memory\+Mapped\+Csv\+Container\+::\+Memory\+Mapped\+Csv\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a8b46304c264d834e65e76e223817d464}\label{structMemoryMappedCsvContainer_a8b46304c264d834e65e76e223817d464}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!````~MemoryMappedCsvContainer@{$\sim$MemoryMappedCsvContainer}}
+\index{````~MemoryMappedCsvContainer@{$\sim$MemoryMappedCsvContainer}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{$\sim$MemoryMappedCsvContainer()}{~MemoryMappedCsvContainer()}}
+{\footnotesize\ttfamily Memory\+Mapped\+Csv\+Container\+::$\sim$\+Memory\+Mapped\+Csv\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a9e26cb5acfeaf3ed1887a5908a9464c3}\label{structMemoryMappedCsvContainer_a9e26cb5acfeaf3ed1887a5908a9464c3}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!close@{close}}
+\index{close@{close}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily bool Memory\+Mapped\+Csv\+Container\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a24e63052aebe0f296d0ae3940d597041}\label{structMemoryMappedCsvContainer_a24e63052aebe0f296d0ae3940d597041}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!colCnt@{colCnt}}
+\index{colCnt@{colCnt}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{colCnt()}{colCnt()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Memory\+Mapped\+Csv\+Container\+::col\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a6b99b2889fc5b6f7201b5d3a25314b42}\label{structMemoryMappedCsvContainer_a6b99b2889fc5b6f7201b5d3a25314b42}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!data@{data}}
+\index{data@{data}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily void Memory\+Mapped\+Csv\+Container\+::data (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&}]{data\+Cache }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a5defae284aca5ee7632dbc76629807e0}\label{structMemoryMappedCsvContainer_a5defae284aca5ee7632dbc76629807e0}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!open@{open}}
+\index{open@{open}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMemoryMappedCsvContainer_ac0800d7d9b88c2910ee4f811d066bbfe}{Memory\+Mapped\+Csv\+Container\+::\+Return\+Code}} Memory\+Mapped\+Csv\+Container\+::open (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{char}]{delim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a1411adcf0bb73eb787603667f9098e7d}\label{structMemoryMappedCsvContainer_a1411adcf0bb73eb787603667f9098e7d}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!reset@{reset}}
+\index{reset@{reset}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Memory\+Mapped\+Csv\+Container\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a3a5aeb5e9a4624bcc5c2402355d6a8f1}\label{structMemoryMappedCsvContainer_a3a5aeb5e9a4624bcc5c2402355d6a8f1}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!row@{row}}
+\index{row@{row}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{row()}{row()}}
+{\footnotesize\ttfamily std\+::string Memory\+Mapped\+Csv\+Container\+::row (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{row }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structMemoryMappedCsvContainer_a9afa0643b4f2474c0b4b44dd2edfc83f}\label{structMemoryMappedCsvContainer_a9afa0643b4f2474c0b4b44dd2edfc83f}} 
+\index{MemoryMappedCsvContainer@{MemoryMappedCsvContainer}!rowCnt@{rowCnt}}
+\index{rowCnt@{rowCnt}!MemoryMappedCsvContainer@{MemoryMappedCsvContainer}}
+\doxysubsubsection{\texorpdfstring{rowCnt()}{rowCnt()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Memory\+Mapped\+Csv\+Container\+::row\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memorymappedcsvcontainer_8h}{memorymappedcsvcontainer.\+h}}\item 
+\mbox{\hyperlink{memorymappedcsvcontainer_8cpp}{memorymappedcsvcontainer.\+cpp}}\end{DoxyCompactItemize}

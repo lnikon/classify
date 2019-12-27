@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -26,8 +26,11 @@ CONFIG += c++17
 
 SOURCES += \
         category.cpp \
+        chartwidget.cpp \
+        classificationdialog.cpp \
         csvtablemodel.cpp \
         csvtableview.cpp \
+        customchartview.cpp \
         main.cpp \
         mainwindow.cpp \
         memorymappedcsvcontainer.cpp \
@@ -38,8 +41,11 @@ SOURCES += \
 
 HEADERS += \
         category.h \
+        chartwidget.h \
+        classificationdialog.h \
         csvtablemodel.h \
         csvtableview.h \
+        customchartview.h \
         datasource.h \
         mainwindow.h \
         memorymappedcsvcontainer.h \

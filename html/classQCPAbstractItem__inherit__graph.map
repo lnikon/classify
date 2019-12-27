@@ -1,0 +1,14 @@
+<map id="QCPAbstractItem" name="QCPAbstractItem">
+<area shape="rect" id="node1" title="The abstract base class for all items in a plot." alt="" coords="702,652,907,1096"/>
+<area shape="rect" id="node4" href="$classQCPItemBracket.html" title="A bracket for referencing/highlighting certain parts in the plot." alt="" coords="5,1283,161,1639"/>
+<area shape="rect" id="node5" href="$classQCPItemCurve.html" title="A curved line from one point to another." alt="" coords="185,1283,325,1639"/>
+<area shape="rect" id="node6" href="$classQCPItemEllipse.html" title="An ellipse." alt="" coords="349,1217,505,1705"/>
+<area shape="rect" id="node7" href="$classQCPItemLine.html" title="A line from one point to another." alt="" coords="530,1291,685,1632"/>
+<area shape="rect" id="node8" href="$classQCPItemPixmap.html" title="An arbitrary pixmap." alt="" coords="709,1188,900,1735"/>
+<area shape="rect" id="node9" href="$classQCPItemRect.html" title="A rectangle." alt="" coords="924,1239,1080,1683"/>
+<area shape="rect" id="node10" href="$classQCPItemStraightLine.html" title="A straight line that spans infinitely in both directions." alt="" coords="1105,1335,1305,1588"/>
+<area shape="rect" id="node11" href="$classQCPItemText.html" title="A text label." alt="" coords="1329,1144,1485,1779"/>
+<area shape="rect" id="node12" href="$classQCPItemTracer.html" title="Item that sticks to QCPGraph data points." alt="" coords="1509,1261,1652,1661"/>
+<area shape="rect" id="node2" href="$classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="702,131,907,604"/>
+<area shape="rect" id="node3" title=" " alt="" coords="769,5,840,83"/>
+</map>

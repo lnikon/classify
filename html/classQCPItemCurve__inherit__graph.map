@@ -1,0 +1,6 @@
+<map id="QCPItemCurve" name="QCPItemCurve">
+<area shape="rect" id="node1" title="A curved line from one point to another." alt="" coords="38,1144,178,1500"/>
+<area shape="rect" id="node2" href="$classQCPAbstractItem.html" title="The abstract base class for all items in a plot." alt="" coords="5,652,211,1096"/>
+<area shape="rect" id="node3" href="$classQCPLayerable.html" title="Base class for all drawable objects." alt="" coords="5,131,211,604"/>
+<area shape="rect" id="node4" title=" " alt="" coords="73,5,143,83"/>
+</map>
