@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>icons/open.png</file>
         <file>icons/import_csv.png</file>
+        <file>icons/mindmap.png</file>
     </qresource>
 </RCC>

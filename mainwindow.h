@@ -13,6 +13,7 @@ enum class ActionIndex
     SAVE,
     KNN,
     CLASSIFY,
+    EXIT,
     ENUM_SIZE
 };
 
@@ -37,6 +38,7 @@ private:
 
 public slots:
     void openTsv();
+    void classify();
 
 };
 

@@ -15,6 +15,7 @@ public:
     CSVTableView(QWidget* parent = nullptr);
 
     void setModel(QAbstractItemModel* model) override;
+    void onUniqueCountAction();
 
     /*
      * Public slots
@@ -28,7 +29,6 @@ public slots:
      */
 private:
     void mouseReleaseEvent(QMouseEvent* pEvent) override;
-    void onUniqueCountAction();
 
     /*
      * Private properties

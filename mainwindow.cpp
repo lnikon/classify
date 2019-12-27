@@ -23,8 +23,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralWidget->layout()->addWidget(csvTableView_);
 
     setupTop();
-
-//    ui->centralWidget->layout()->addWidget(progressBar_);
 }
 
 MainWindow::~MainWindow()
@@ -41,6 +39,26 @@ void MainWindow::setupTop()
     file->addAction(openAction);
     ui->mainToolBar->addAction(openAction);
     connect(actions_[static_cast<int>(ActionIndex::OPEN_TSV)], &QAction::triggered, this, &MainWindow::openTsv);
+
+    actions_.push_back(new QAction());
+    actions_.push_back(new QAction());
+
+    QAction* classifyAction = new QAction(QIcon(":/icons/mindmap.png"), "Classify", this);
+    actions_.push_back(classifyAction);
+    file->addAction(classifyAction);
+    ui->mainToolBar->addAction(classifyAction);
+    connect(actions_[static_cast<int>(ActionIndex::CLASSIFY)], &QAction::triggered, this, &MainWindow::classify);
+
+    ui->mainToolBar->addSeparator();
+
+    QAction* exitAction = new QAction(QIcon(":/icons/exit.png"), "Exit", this);
+    actions_.push_back(exitAction);
+    file->addAction(exitAction);
+    ui->mainToolBar->addAction(exitAction);
+    connect(actions_[static_cast<int>(ActionIndex::EXIT)], QOverload<bool>::of(&QAction::triggered), this,[=]()
+    {
+        qApp->exit();
+    });
 }
 
 void MainWindow::openTsv()
@@ -67,4 +85,9 @@ void MainWindow::openTsv()
         }
     }
     progressBar_->hide();
+}
+
+void MainWindow::classify()
+{
+    csvTableView_->onUniqueCountAction();
 }

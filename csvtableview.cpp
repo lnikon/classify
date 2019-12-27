@@ -31,12 +31,12 @@ CSVTableView::CSVTableView(QWidget *parent)
     pHeaderView->setSortIndicatorShown(true);
     connect(pHeaderView, &QHeaderView::sectionClicked, this, &CSVTableView::slotSectionClicked);
 
-    QAction* pUniqueCountAction = new QAction("Unique values in row", m_pContextMenu);
-    connect(pUniqueCountAction, &QAction::triggered, this, &CSVTableView::onUniqueCountAction);
-    m_pContextMenu->addAction(pUniqueCountAction);
+//    QAction* pUniqueCountAction = new QAction("Unique values in row", m_pContextMenu);
+//    connect(pUniqueCountAction, &QAction::triggered, this, &CSVTableView::onUniqueCountAction);
+//    m_pContextMenu->addAction(pUniqueCountAction);
 
-    this->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(this, &CSVTableView::customContextMenuRequested, this, &CSVTableView::onCustomContextMenu);
+//    this->setContextMenuPolicy(Qt::CustomContextMenu);
+//    connect(this, &CSVTableView::customContextMenuRequested, this, &CSVTableView::onCustomContextMenu);
 }
 
 void CSVTableView::setModel(QAbstractItemModel *model)
@@ -86,65 +86,10 @@ void CSVTableView::mouseReleaseEvent(QMouseEvent* pEvent)
 
 void CSVTableView::onUniqueCountAction()
 {
-    using namespace QtCharts;
-    QModelIndex index = currentIndex();
-    if (!index.isValid())
-    {
-        return;
-    }
-
-    const auto colIdx = index.column();
     QAbstractItemModel* pSelectionModel = selectionModel()->model();
-    const auto rowCnt = pSelectionModel->rowCount();
 
     ClassificationDialog* dlg = new ClassificationDialog();
     dlg->setModel(pSelectionModel);
     dlg->show();
 
-//    QPieSeries* pSeries = new QPieSeries;
-//    pSeries->setLabelsPosition(QPieSlice::LabelInsideTangential);
-
-//    QMap<QString, int> valueCount;
-//    for (int i = 0; i < rowCnt; ++i)
-//    {
-//        QModelIndex index = pSelectionModel->index(i, colIdx, QModelIndex());
-//        QString key = index.data().toString();
-
-//        if (valueCount.contains(key))
-//        {
-//            valueCount[key]++;
-//        }
-//        else
-//        {
-//            valueCount[key] = 0;
-//        }
-//    }
-
-//    for (auto it = valueCount.begin(); it != valueCount.end(); ++it)
-//    {
-//        pSeries->append(it.key(), it.value());
-//    }
-
-//    auto slices = pSeries->slices();
-//    foreach( auto* slice, slices)
-//    {
-//        slice->setLabelVisible();
-//    }
-
-//    QChart* pChart = new QChart;
-//    pChart->addSeries(pSeries);
-//    pChart->legend()->hide();
-
-//    QtCharts::QChartView* pView = new QtCharts::QChartView(pChart);
-////    CustomChartView* pView = new CustomChartView(pChart);
-//    pView->setRenderHint(QPainter::Antialiasing);
-//    pView->setRubberBand(QChartView::HorizontalRubberBand);
-
-//    QHBoxLayout* pHLayout = new QHBoxLayout;
-//    pHLayout->addWidget(pView);
-
-//    QWidget* pWgt = new QWidget;
-//    pWgt->resize(600, 800);
-//    pWgt->setLayout(pHLayout);
-//    pWgt->show();
 }
